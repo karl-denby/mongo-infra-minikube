@@ -159,5 +159,5 @@ echo "Cluster can been deployed using the command:"
 echo "$ kubectl apply -f deploy-a-cluster.yaml"
 echo
 echo "Please modify the above file to your requirments before running"
-
+echo "Please wait till your instance is fully running the run bash restore.sh in case you need restoration"
 exit 0

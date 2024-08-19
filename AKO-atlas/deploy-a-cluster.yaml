@@ -1,0 +1,72 @@
+apiVersion: v1
+stringData:
+  orgId: 657b24485da7647a4b8e236b
+  projectID: 658d46e52a180f6cdc8c20a6
+  publicApiKey: ylhahqjc
+  privateApiKey: e307af29-10f5-4eca-aa2e-04f84b8fd587
+kind: Secret
+metadata:
+  labels:
+    atlas.mongodb.com/type: credentials
+  name: my-project-connection
+  namespace: mongodb-atlas-system
+type: Opaque
+
+---
+
+apiVersion: atlas.mongodb.com/v1
+kind: AtlasProject
+metadata:
+  name: dina.amingad
+  namespace: mongodb-atlas-system
+spec:
+  name: dina.amingad
+  connectionSecretRef:
+    name: my-project-connection
+  projectIpAccessList:
+    - cidrBlock: "104.30.134.187/32"
+      comment: "created by https://github.com/karl-denby/mongo-infra-minikube"
+---
+
+apiVersion: atlas.mongodb.com/v1
+kind: AtlasDeployment
+metadata:
+  name: simple-m10-eu-west
+  namespace: mongodb-atlas-system
+spec:
+  projectRef:
+    name: dina.amingad
+  deploymentSpec:
+    clusterType: REPLICASET
+    name: my-ako-replicaset
+    tags:
+    - key: "environment"
+      value: "mongo-infra-minikube"
+    - key: "owner"
+      value: "dina.amingad"
+    - key: "keep_until"
+      value: "2024-08-20"
+    backupEnabled: false
+    replicationSpecs:
+      - numShards: 1
+        regionConfigs:
+         - regionName: EU_WEST_1
+           providerName: AWS
+           autoScaling:
+             diskGB:
+               enabled: false
+             compute:
+               enabled: false
+               scaleDownEnabled: false
+              #  minInstanceSize: M10
+              #  maxInstanceSize: M10
+           analyticsSpecs:
+             instanceSize: M10
+             nodeCount: 0
+           electableSpecs:
+             instanceSize: M10
+             nodeCount: 3
+           priority: 7
+           readOnlySpecs:
+             instanceSize: M10
+             nodeCount: 0
