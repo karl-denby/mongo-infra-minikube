@@ -30,6 +30,7 @@ bash restore.sh
 ```
 and add the extracted folder location + MongoDB Atlas connection URI, for example mongodb+srv://<username>:<password>@<cluster-url>/?retryWrites=true&w=majority
 4. that's it.
+ps: book used was https://github.com/karlseguin/the-little-mongodb-book 
 
 ## extras
 if you want to explore with running it against chatbot using fireworks ai with npm and ui, you can use the reference here and get the trial API, in this case you can use https://docs.google.com/document/d/199oT1BBqkB7VM4aHjgNWEdAFF_WgA1vmm9uoTtqNE9s to run the server without the need for any ingest.
