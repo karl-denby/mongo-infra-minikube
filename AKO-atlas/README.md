@@ -21,7 +21,7 @@ kubectl apply -f deploy-a-cluster.yaml
 
 This will create your secret (forgit push origin  your api key), your project, and an m10 deployment. It will also set up a tag with the projectname you provided and a keep.until variable (which we use to automatically remove test clusters) set to tomorrow.
 
-## to restore and create vector search
+## to restore and create vector search along with ready embedded data with fireworks ai
 1. after finishing the above step and made sure that the cluser is reflected successfully in the UI fully deployed.
 2. extract the attached mongodump.zip in any location to use later, can be in same folder or in downloads folder for example.
 3. run (on mac only for now):
@@ -31,7 +31,7 @@ bash restore.sh
 and add the extracted folder location + MongoDB Atlas connection URI, for example mongodb+srv://<username>:<password>@<cluster-url>/?retryWrites=true&w=majority
 4. that's it.
 
-££extras
+## extras
 if you want to explore with running it against chatbot using fireworks ai with npm and ui, you can use the reference here and get the trial API, in this case you can use https://docs.google.com/document/d/199oT1BBqkB7VM4aHjgNWEdAFF_WgA1vmm9uoTtqNE9s to run the server without the need for any ingest.
 
 ## Clean up
