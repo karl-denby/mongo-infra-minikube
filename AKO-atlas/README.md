@@ -33,7 +33,7 @@ and add the extracted folder location + MongoDB Atlas connection URI, for exampl
 ps: book used was https://github.com/karlseguin/the-little-mongodb-book 
 
 ## extras
-if you want to explore with running it against chatbot using fireworks ai with npm and ui, you can use the reference here and get the trial API, in this case you can use https://docs.google.com/document/d/199oT1BBqkB7VM4aHjgNWEdAFF_WgA1vmm9uoTtqNE9s to run the server without the need for any ingest.
+if you want to explore with running it against chatbot using fireworks ai with npm and ui, you can use the reference here and get the trial API, in this case you can use https://docs.google.com/document/d/199oT1BBqkB7VM4aHjgNWEdAFF_WgA1vmm9uoTtqNE9s (where the data was built on) to run the server without the need for any ingest.
 
 ## Clean up
 To remove the minikube cluster and any tools that where downloaded to this directory simply run
