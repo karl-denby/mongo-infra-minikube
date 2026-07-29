@@ -67,7 +67,7 @@ spec:
   # Application Database
   applicationDatabase:
     members: 3
-    version: 6.0.0-ent
+    version: 7.0.31-ent
     podSpec:
       podTemplate:
         spec:
